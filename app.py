@@ -7,6 +7,7 @@ import threading
 import json
 from io import StringIO
 from datetime import datetime
+from streamlit_autorefresh import st_autorefresh
 
 # =========================
 # Page & Styling
@@ -369,8 +370,8 @@ st.info(f"Status: **{status}**")
 
 # Auto-refresh the dashboard while running or paused so the table updates live
 if st.session_state.is_running or st.session_state.is_paused:
-    time.sleep(30)
-    st.experimental_rerun()
+    st_autorefresh(interval=5000, key="auto_refresh")
+
 
 # =========================
 # Real-time Log Table
