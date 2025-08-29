@@ -7,6 +7,7 @@ import threading
 import json
 from io import StringIO
 from datetime import datetime
+from streamlit_autorefresh import st_autorefresh
 
 # =========================
 # Page & Styling
